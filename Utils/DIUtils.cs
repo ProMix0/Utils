@@ -31,7 +31,7 @@ namespace Utils
         {
         }
 
-        protected abstract override Task ExecuteAsync(CancellationToken stoppingToken);
+        protected abstract override Task ExecuteAsync(CancellationToken token);
 
         private class FalseApplicationEnder : IApplicationEnder
         {

@@ -13,13 +13,13 @@ namespace Utils
             this.provider = provider;
         }
 
-        protected override async Task ExecuteAsync(CancellationToken stoppingToken)
+        protected override async Task ExecuteAsync(CancellationToken token)
         {
             using IServiceScope scope = provider.CreateScope();
 
             T worker = ActivatorUtilities.CreateInstance<T>(provider);
 
-            await worker.StartAsync(stoppingToken);
+            await worker.StartAsync(token);
         }
     }
 }
